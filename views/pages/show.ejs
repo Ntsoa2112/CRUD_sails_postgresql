@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Easytech</title>
+</head>
+<body>
+    <% for(var i=0; i<users.length; i++) {%>
+        <span><%= (i+1) %></span>
+        <p>Nom : <%= users[i].nom %></p>
+        <p>Prénom : <%= users[i].prenom %></p>
+        <a href="/edit/<%= users[i].id %>">Edit</a><br>
+        <a href="/supprimer/<%= users[i].id %>">Supprimer</a>
+        <br><br>
+    <% } %>
+</body>
+</html>

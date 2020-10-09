@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <form action="/edit/<%= user.id %>" method="POST" class="pure-form">
+            <label for="nom">Nom:</label><br>
+            <input type="text" id="nom" name="nom" value="<%= user.nom %>"><br>
+            <label for="prenom">Prenom:</label><br>
+            <input type="text" id="prenom" name="prenom" value="<%= user.prenom %>"><br><br>
+            <label for="categorie">Catégorie:</label>
+            <select id="categorie" name="categorie" value="<%= user.categorie %>">
+                <option value="<%= user.categorie %>"><%= user.categorie %></option>
+                <option value="prod1">Prod 1</option>
+                <option value="prod2">Prod 2</option>
+                <option value="prod3">Prod 3</option>
+                <option value="prod4">Prod 4</option>
+                <option value="trans">Trans</option>
+            </select><br><br>
+            <input type="password" placeholder="Password" id="password" name="password" value="<%= user.password %>" required>
+            <input type="password" placeholder="Confirm Password" id="confirm_password" required><br><br>
+    
+            <button type="submit" class="pure-button pure-button-primary">Créer</button>
+    
+          </form> 
+</body>
+<script>
+        var password = document.getElementById("password")
+        var confirm_password = document.getElementById("confirm_password");
+    
+        function validatePassword(){
+            if(password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Confirmation mot de passe incorrecte");
+            } else {
+                confirm_password.setCustomValidity('');
+            }
+        }
+    
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+    </script>
+</html>
