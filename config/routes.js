@@ -27,9 +27,9 @@ module.exports.routes = {
 
   '/exemple': 'exempleController.test',
 
-  '/connecter' : { view: 'pages/connecter'},
+  '/creer_compte' : { view: 'pages/creer_compte'},
 
-  'post /connecter' : 'connecterController.connecter',
+  'post /creer_compte' : 'connecterController.connecter',
 
   '/show' : 'connecterController.show',
 
@@ -38,6 +38,14 @@ module.exports.routes = {
   'post /edit/:id' : 'connecterController.edit_user',
 
   '/supprimer/:id' : 'connecterController.supprimer_user',
+
+  '/login' : { view: 'pages/login'},
+
+  'post /login' : 'connecterController.login',
+
+  '/dashboard' : { view: 'pages/dashboard' },
+
+  '/logout' : 'connecterController.logout',
 
 
 

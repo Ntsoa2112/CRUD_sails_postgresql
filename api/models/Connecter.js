@@ -18,14 +18,28 @@ module.exports = {
   },
 
 
-  beforeCreate: function(connecter, cb) {
+  beforeCreate: function(user, cb) {
     bcrypt.genSalt(10, function(err, salt) {
-        bcrypt.hash(connecter.password, salt, function(err, hash) {
+        bcrypt.hash(user.password, salt, function(err, hash) {
             if (err) {
                 console.log(err);
                 cb(err);
             } else {
-                connecter.password = hash;
+                user.password = hash;
+                cb();
+            }
+        });
+    });
+  },
+
+  beforeUpdate: function(user, cb) {
+    bcrypt.genSalt(10, function(err, salt) {
+        bcrypt.hash(user.password, salt, function(err, hash) {
+            if (err) {
+                console.log(err);
+                cb(err);
+            } else {
+                user.password = hash;
                 cb();
             }
         });

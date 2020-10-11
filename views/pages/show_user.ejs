@@ -21,17 +21,17 @@
                 <option value="prod4">Prod 4</option>
                 <option value="trans">Trans</option>
             </select><br><br>
-            <input type="password" placeholder="Password" id="password" name="password" value="<%= user.password %>" required>
+            <input type="password" placeholder="Password" id="password" name="password" required>
             <input type="password" placeholder="Confirm Password" id="confirm_password" required><br><br>
-    
+
             <button type="submit" class="pure-button pure-button-primary">Créer</button>
-    
-          </form> 
+
+          </form>
 </body>
 <script>
         var password = document.getElementById("password")
         var confirm_password = document.getElementById("confirm_password");
-    
+
         function validatePassword(){
             if(password.value != confirm_password.value) {
                 confirm_password.setCustomValidity("Confirmation mot de passe incorrecte");
@@ -39,7 +39,7 @@
                 confirm_password.setCustomValidity('');
             }
         }
-    
+
         password.onchange = validatePassword;
         confirm_password.onkeyup = validatePassword;
     </script>
