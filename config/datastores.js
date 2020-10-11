@@ -51,7 +51,7 @@ module.exports.datastores = {
     // adapter: 'sails-mysql',
     //url: 'mysql://user:password@host:port/database',
     adapter: 'sails-postgresql',
-    url: 'mysql://postgres:root@localhost:5434/ticket',
+    url: 'mysql://postgres:root@localhost:5432/ticket',
 
     /*
     database: 'ticketing',
@@ -69,7 +69,7 @@ module.exports.datastores = {
 
 /*
 module.exports = {
-  
+
   attributes: { },
   datastore : 'default'
 
